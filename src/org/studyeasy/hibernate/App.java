@@ -47,7 +47,7 @@ public class App {
 		  
 		  */
 		  
-		  
+		  /*
 		  //Delete
 		// Create object of entity class type
 		  Users user = new Users();
@@ -61,6 +61,13 @@ public class App {
 		  // Commit the transaction 
 		  session.getTransaction().commit();
 		  System.out.println(user);
+		  
+		  */
+		  
+		  //HQL
+		  session.beginTransaction();
+		  session.createQuery("update Users set password = 'pass@123' where first_name = 'firstName'").executeUpdate(); // first letter of the table name is capital
+		  session.getTransaction().commit();
 		  
 		
 	} finally {
