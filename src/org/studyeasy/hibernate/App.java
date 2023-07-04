@@ -17,8 +17,10 @@ public class App {
 	  Session session = factory.getCurrentSession();
 	  
 	  try {
-		  // Create object of entity class type
+		  /*
+		  // Create 
 		  Users user = new Users("username", "password", "firstName", "lastName");
+		  user.setUserId(3);
 		  // Start transaction
 		  session.beginTransaction();
 		  // Perform operation
@@ -26,6 +28,38 @@ public class App {
 		  // Commit the transaction 
 		  session.getTransaction().commit();
 		  System.out.println("Row added!");
+		  */
+		  
+		  
+		  /*
+		// Update operation
+		  Users user = new Users();
+		  // Start transaction
+		  session.beginTransaction();
+		  // Perform operation
+		  user = session.get(Users.class, 1);
+		  // Updating object
+		  user.setUsername("kiran");
+		  // Commit the transaction 
+		  session.getTransaction().commit();
+		  System.out.println(user);
+		  
+		  */
+		  
+		  
+		  //Delete
+		// Create object of entity class type
+		  Users user = new Users();
+		  // Start transaction
+		  session.beginTransaction();
+		  // Perform operation
+		  user = session.get(Users.class, 0);
+		  //Deleting a Record with user id 8
+		  session.delete(user);
+		  
+		  // Commit the transaction 
+		  session.getTransaction().commit();
+		  System.out.println(user);
 		  
 		
 	} finally {
